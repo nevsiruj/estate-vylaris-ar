@@ -15,7 +15,7 @@ html = html
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
   .replace(/<meta property="og:image(?:\:type)?"[^>]*>/g, '')
   .replace(/<link rel="icon"[^>]*>/g, '<link rel="icon" type="image/svg+xml" href="/favicon.svg">')
-  .replace('</head>', '<style>html,body{margin:0;padding:0}body{min-width:320px}</style></head>')
+  .replace('</head>', '<style>html,body{margin:0;padding:0}body{min-width:320px}</style><script defer src="/estate-analytics.js"></script></head>')
 
 if (html.includes('/_nuxt/') || html.includes('i.ibb.co')) {
   throw new Error('Quedaron dependencias de Nuxt o imágenes externas en la landing')
